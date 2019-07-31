@@ -17,5 +17,9 @@ RUN mkdir -p ~/.ssh \
     && mkdir -p ~/.vscode-server \
     && echo 'eval `ssh-agent -s`' >> ~/.profile
 
+RUN curl -L https://get.oh-my.fish > /home/developer/install_omf \
+    && /usr/bin/fish /home/developer/install_omf --noninteractive --yes \
+    && rm /home/developer/install_omf
+
 ENV HOME=/home/developer
 ENV SHELL=/usr/bin/fish
